@@ -1,0 +1,18 @@
+/* Styles for shopping cart */
+.cart-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item h3 {
+  margin-top: 0;
+}
+
+.cart-total {
+  font-weight: bold;
+  text-align: right;
+}

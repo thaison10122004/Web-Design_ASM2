@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav.container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        #menu .item a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #actions .item {
+            margin-left: 20px;
+        }
+
+        #actions .item img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .contact.container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact.container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact.container p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact.container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact.container form label {
+            margin-bottom: 10px;
+        }
+
+        .contact.container form input[type="text"],
+        .contact.container form input[type="email"],
+        .contact.container form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact.container form button[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact.container form button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #success-message {
+            text-align: center;
+            color: #28a745;
+            font-weight: bold;
+            display: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer .menu ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        footer .menu ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        footer .social a {
+            margin-left: 10px;
+        }
+
+        footer .social a img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav container">
+            <a href="#" class="logo"><img src="assets/logo.png" alt="Logo"></a>
+            <div id="menu">
+                <div class="item">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="item">
+                    <a href="dish.html">Menu</a>
+                </div>
+                <div class="item">
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="item">
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div id="actions">
+                <div class="item">
+                    <img src="assets/user.png" alt="">
+                </div>
+                <div class="item cart">
+                    <img src="assets/cart.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="contact container">
+        <h1>Contact Us</h1>
+        <p>Feel free to contact us with any questions or inquiries you may have.</p>
+        <form id="contact-form" action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="success-message" style="display: none;">
+            Your message has been sent successfully!
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dish.html">Menu</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social">
+                <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            // Here you can add code to send the form data to the server using AJAX or fetch
+            // After successfully sending the data, display the success message
+            document.getElementById('success-message').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

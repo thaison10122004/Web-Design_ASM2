@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="stylea.css">
+  <style>
+    #checkout-container {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
+    #payment-success {
+      display: none;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
+    #back-to-home {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #back-to-home:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cart"></div>
+
+  <button id="checkout-btn">Checkout</button>
+
+  <div id="checkout-container" style="display: none;">
+    <h2>Payment Details</h2>
+    <p>Please enter your payment information below:</p>
+    <form id="payment-form">
+      <label for="name">Name on Card:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="card-number">Card Number:</label><br>
+      <input type="text" id="card-number" name="card-number" required><br><br>
+      <label for="expiry">Expiration Date:</label><br>
+      <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required><br><br>
+      <label for="cvv">CVV:</label><br>
+      <input type="text" id="cvv" name="cvv" required><br><br>
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+
+  <div id="payment-success">
+    Payment Successful!
+    <button id="back-to-home">Back to Home</button>
+  </div>
+
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var products = JSON.parse(localStorage.getItem("items"));
+
+    // Hiển thị các sản phẩm trong giỏ hàng
+    var cart = document.getElementById("cart");
+
+    // Tính tổng tiền
+    var totalPrice = 0;
+
+    products.forEach(function (product) {
+      // Tạo phần tử cho từng sản phẩm
+      var item = document.createElement("div");
+      item.classList.add("cart-item");
+      item.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>${product.desc}</p>
+        <p>Price: ${product.price}</p>
+      `;
+      cart.appendChild(item);
+
+      // Cập nhật tổng tiền
+      var price = parseFloat(product.price.replace(/\D/g, ''));
+      totalPrice += price;
+    });
+
+    // Hiển thị tổng tiền
+    var totalElement = document.createElement("div");
+    totalElement.classList.add("cart-total");
+    totalElement.textContent = "Total: " + totalPrice.toLocaleString() + " VNĐ";
+    cart.appendChild(totalElement);
+
+    // Xử lý sự kiện khi click vào nút thanh toán
+    var checkoutBtn = document.getElementById("checkout-btn");
+    checkoutBtn.addEventListener("click", function () {
+      // Hiển thị phần thanh toán khi click vào nút Checkout
+      document.getElementById("checkout-container").style.display = "block";
+    });
+
+    // Xử lý sự kiện khi click vào nút back
+    var backToHomeBtn = document.getElementById("back-to-home");
+    backToHomeBtn.addEventListener("click", function () {
+      // Chuyển về trang index.html khi click vào nút back
+      window.location.href = "index.html";
+    });
+
+    // Xử lý sự kiện khi người dùng submit form thanh toán
+    var paymentForm = document.getElementById("payment-form");
+    paymentForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      // Xử lý thanh toán ở đây
+      // Ẩn form thanh toán và hiển thị thông báo thanh toán thành công
+      document.getElementById("checkout-container").style.display = "none";
+      document.getElementById("payment-success").style.display = "block";
+    });
+  });
+</script>
+
+</html>
+
+
+
+

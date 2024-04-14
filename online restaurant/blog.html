@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .blog-post {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .blog-post h2 {
+            color: #333;
+        }
+
+        .blog-post p {
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav container">
+            <a href="#" class="logo"><img src="assets/logo.png" alt="Logo"></a>
+            <div id="menu">
+                <div class="item">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="item">
+                    <a href="dish.html">Menu</a>
+                </div>
+                <div class="item">
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="item">
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div id="actions">
+                <div class="item">
+                    <img src="assets/user.png" alt="" onclick="redirectToLogin()">
+                </div>
+                <div class="item cart">
+                    <img src="assets/cart.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="blog container">
+        <h1>Blog</h1>
+        <div class="post">
+            <h2>Review of Restaurant X's Signature Dish</h2>
+            <p>This post discusses the delightful experience of trying Restaurant X's signature dish. The dish is a perfect blend of flavors and textures, leaving a lasting impression on every diner.</p>
+        </div>
+        <div class="post">
+            <h2>Exploring Street Food Culture in Bangkok</h2>
+            <p>This post explores the vibrant street food culture in Bangkok, showcasing the diverse array of flavors and dishes available. From savory to sweet, there's something for every palate.</p>
+        </div>
+        <!-- Add more posts here -->
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dish.html">Menu</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social">
+                <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+
+</html>
